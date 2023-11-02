@@ -6020,9 +6020,9 @@ concat-stream@^1.5.0, concat-stream@^1.5.1, concat-stream@^1.6.0, concat-stream@
     readable-stream "^2.2.2"
     typedarray "^0.0.6"
 
-"concat-stream@github:maxogden/concat-stream#feat/smaller":
+"concat-stream@github:hugomrdias/concat-stream#feat/smaller":
   version "2.0.0"
-  resolved "https://codeload.github.com/maxogden/concat-stream/tar.gz/057bc7b5d6d8df26c8cf00a3f151b6721a0a8034"
+  resolved "https://codeload.github.com/hugomrdias/concat-stream/tar.gz/057bc7b5d6d8df26c8cf00a3f151b6721a0a8034"
   dependencies:
     inherits "^2.0.3"
     readable-stream "^3.0.2"
@@ -13871,9 +13871,9 @@ natural-compare@^1.4.0:
   resolved "https://registry.yarnpkg.com/natural-compare/-/natural-compare-1.4.0.tgz#4abebfeed7541f2c27acfb29bdbbd15c8d5ba4f7"
   integrity sha1-Sr6/7tdUHywnrPspvbvRXI1bpPc=
 
-"ndjson@github:maxogden/ndjson#feat/readable-stream3":
+"ndjson@github:hugomrdias/ndjson#feat/readable-stream3":
   version "1.5.0"
-  resolved "https://codeload.github.com/maxogden/ndjson/tar.gz/4db16da6b42e5b39bf300c3a7cde62abb3fa3a11"
+  resolved "https://codeload.github.com/hugomrdias/ndjson/tar.gz/4db16da6b42e5b39bf300c3a7cde62abb3fa3a11"
   dependencies:
     json-stringify-safe "^5.0.1"
     minimist "^1.2.0"

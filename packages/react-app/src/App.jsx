@@ -58,7 +58,8 @@ const ipfs = ipfsAPI({ host: "ipfs.infura.io", port: "5001", protocol: "https" }
 */
 
 /// 📡 What chain are your contracts deployed to?
-const targetNetwork = NETWORKS.localhost; // <------- select your target frontend network (localhost, rinkeby, xdai, mainnet)
+// const targetNetwork = NETWORKS.localhost; // <------- select your target frontend network (localhost, rinkeby, xdai, mainnet)
+const targetNetwork = NETWORKS.sepolia; // <------- select your target frontend network (localhost, rinkeby, xdai, mainnet)
 
 // 😬 Sorry for all the console logging
 const DEBUG = true;
@@ -119,13 +120,13 @@ function App(props) {
   const mainnetProvider = scaffoldEthProvider && scaffoldEthProvider._network ? scaffoldEthProvider : mainnetInfura;
 
   const logoutOfWeb3Modal = async () => {
-     await web3Modal.clearCachedProvider();
-     if (injectedProvider && injectedProvider.provider && typeof injectedProvider.provider.disconnect == "function") {
-       await injectedProvider.provider.disconnect();
-     }
-     setTimeout(() => {
-       window.location.reload();
-     }, 1);
+    await web3Modal.clearCachedProvider();
+    if (injectedProvider && injectedProvider.provider && typeof injectedProvider.provider.disconnect == "function") {
+      await injectedProvider.provider.disconnect();
+    }
+    setTimeout(() => {
+      window.location.reload();
+    }, 1);
   };
 
   const [injectedProvider, setInjectedProvider] = useState();
@@ -203,13 +204,13 @@ function App(props) {
           const tokenURI = await readContracts.YourCollectible.tokenURI(tokenId);
           const jsonManifestString = atob(tokenURI.substring(29))
           console.log("jsonManifestString", jsonManifestString);
-/*
-          const ipfsHash = tokenURI.replace("https://ipfs.io/ipfs/", "");
-          console.log("ipfsHash", ipfsHash);
-
-          const jsonManifestBuffer = await getFromIPFS(ipfsHash);
-
-        */
+          /*
+                    const ipfsHash = tokenURI.replace("https://ipfs.io/ipfs/", "");
+                    console.log("ipfsHash", ipfsHash);
+          
+                    const jsonManifestBuffer = await getFromIPFS(ipfsHash);
+          
+                  */
           try {
             const jsonManifest = JSON.parse(jsonManifestString);
             console.log("jsonManifest", jsonManifest);
@@ -430,11 +431,11 @@ function App(props) {
             */}
 
             <div style={{ maxWidth: 820, margin: "auto", marginTop: 32, paddingBottom: 32 }}>
-              {isSigner?(
-                <Button type={"primary"} onClick={()=>{
-                  tx( writeContracts.YourCollectible.mintItem() )
+              {isSigner ? (
+                <Button type={"primary"} onClick={() => {
+                  tx(writeContracts.YourCollectible.mintItem())
                 }}>MINT</Button>
-              ):(
+              ) : (
                 <Button type={"primary"} onClick={loadWeb3Modal}>CONNECT WALLET</Button>
               )}
 
@@ -447,7 +448,7 @@ function App(props) {
                 renderItem={item => {
                   const id = item.id.toNumber();
 
-                  console.log("IMAGE",item.image)
+                  console.log("IMAGE", item.image)
 
                   return (
                     <List.Item key={id + "_" + item.uri + "_" + item.owner}>
@@ -458,8 +459,8 @@ function App(props) {
                           </div>
                         }
                       >
-                        <a href={"https://opensea.io/assets/"+(readContracts && readContracts.YourCollectible && readContracts.YourCollectible.address)+"/"+item.id} target="_blank">
-                        <img src={item.image} />
+                        <a href={"https://opensea.io/assets/" + (readContracts && readContracts.YourCollectible && readContracts.YourCollectible.address) + "/" + item.id} target="_blank">
+                          <img src={item.image} />
                         </a>
                         <div>{item.description}</div>
                       </Card>
@@ -506,7 +507,7 @@ function App(props) {
           </Route>
           <Route path="/debug">
 
-            <div style={{padding:32}}>
+            <div style={{ padding: 32 }}>
               <Address value={readContracts && readContracts.YourCollectible && readContracts.YourCollectible.address} />
             </div>
 

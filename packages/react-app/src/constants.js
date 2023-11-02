@@ -304,6 +304,14 @@ export const NETWORKS = {
     blockExplorer: "",
     rpcUrl: "http://" + window.location.hostname + ":8545",
   },
+  sepolia: {
+    name: "sepolia",
+    color: '#666666',
+    chainId: 11155111,
+    blockExplorer: 'https://sepolia.etherscan.io/',
+    // rpcUrl: "http://" + window.location.hostname + ":8545",
+    rpcUrl: "https://eth-sepolia.g.alchemy.com/v2/2aUvl36AwoIdzsS64jsHiO9QE5t8Ftyh/",
+  },
   mainnet: {
     name: "mainnet",
     color: "#ff8b9e",
