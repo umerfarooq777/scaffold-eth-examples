@@ -61,5 +61,8 @@
       "**/hardhat",
       "**/hardhat/**"
     ]
+  },
+  "dependencies": {
+    "concat-stream": "^2.0.0"
   }
 }
