@@ -1,4 +1,4 @@
-# 🏗 scaffold-eth - 🔵 Loogies SVG NFT umar
+# 🏗 scaffold-eth - 🔵 Loogies SVG NFT umar :)
 https://github.com/umerfarooq777/scaffold-eth-examples/tree/loogies-svg-nft
 
 ```bash
